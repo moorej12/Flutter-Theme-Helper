@@ -43,9 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
         appLayout.appWidth = screenWidth;
       });
       return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-        ),
         body: Center(
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -53,12 +50,10 @@ class _MyHomePageState extends State<MyHomePage> {
               EdgeResizeableContainer(
                 child: Container(
                   height: double.infinity,
-                  // width: appLayout.leftDivider,
                   color: Colors.transparent,
                 ),
                 onRightResize: (double newWidth) {
                   appLayout.leftDivider = newWidth;
-                  return appLayout.leftDivider;
                 },
                 decoration: BoxDecoration(
                   border: Border(
@@ -86,7 +81,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 onLeftResize: (double newWidth) {
                   appLayout.rightDivider = newWidth;
-                  return appLayout.rightDivider;
                 },
                 decoration: BoxDecoration(
                   border: Border(

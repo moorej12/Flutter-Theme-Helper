@@ -47,7 +47,7 @@ class AppLayout extends ChangeNotifier {
     if (rightDivider + left + minCenterWidth >= _appWidth) {
       _leftDivider = _appWidth - rightDivider - minCenterWidth;
     } else {
-      _leftDivider = left;
+      _leftDivider = left < 10 ? 10 : left;
     }
     reducedLeftWidth = _leftDivider;
     notifyListeners();
@@ -57,7 +57,7 @@ class AppLayout extends ChangeNotifier {
     if (leftDivider + right + minCenterWidth >= _appWidth) {
       _rightDivider = _appWidth - leftDivider - minCenterWidth;
     } else {
-      _rightDivider = right;
+      _rightDivider = right < 10 ? 10 : right;
     }
     reducedRightWidth = _rightDivider;
     notifyListeners();
